@@ -2,6 +2,6 @@
 
 import React from "react";
 
-export default function pokedex() {
+export default function Pokedex() {
     return <div>pokedex</div>;
 }
