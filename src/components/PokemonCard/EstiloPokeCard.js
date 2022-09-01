@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const PokeList = styled.ul`
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;

@@ -10,9 +10,12 @@ import {
 } from "./EstiloPokeCard";
 import { useNavigate } from "react-router-dom";
 import { goToDetailPage } from "../../router/coordinator";
+import { useContext } from "react";
+import {ContextPokedex} from "../../ContextPokedex/ContexPokedex"
 
 export default function PokeCard({ name }) {
     const navigate = useNavigate();
+    const {inforPokemons} = useContext(ContextPokedex);
 
     return (
         <Card>
@@ -20,13 +23,16 @@ export default function PokeCard({ name }) {
                 <CardMedia src="/colocarimagem" alt="Imagem do Pokemon" />
 
                 <CardContent>
-                    <h2>{name}</h2>
+                   {inforPokemons.map((pokemom) =>(
+                    <>
+                        <p>{pokemom.name}</p>
+                        <img src={pokemom[`sprites`][`other`][`official-artwork`][`front_default`]}
+                        />
+                    </>
+                   ))}
+                   
                     <Typography variant="body2" color="text.secondary">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Provident tenetur voluptas rem, nobis minus, eaque
-                        consequatur accusantium iste beatae fuga unde sed
-                        similique? Obcaecati expedita laboriosam quasi ipsum
-                        alias soluta.
+                        
                     </Typography>
                 </CardContent>
             </CardActionArea>
