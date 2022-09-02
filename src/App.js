@@ -67,6 +67,7 @@ export default function App() {
             value={{
                 infoPokemons,
                 capturarPokemon,
+                removerPokemon,
                 pokedex,
             }}>
             <Router />
