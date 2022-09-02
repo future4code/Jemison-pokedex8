@@ -3,27 +3,28 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import {ContextPokedex} from "../ContextPokedex/ContexPokedex"
+import { ContextPokedex } from "../context/ContexPokedex";
 
 /// Copiar logica e estrutura do pokecard
 
 export default function Pokedex() {
     const navigate = useNavigate();
-    const {pokedex} = useContext(ContextPokedex);
+    const { pokedex } = useContext(ContextPokedex);
 
-
-
-    return( 
-    <div>
-         {pokedex.map((pokemom) =>(
-             <>
-                <p>{pokemom.name}</p>
-                <img src={pokemom[`sprites`][`other`][`official-artwork`][`front_default`]}
-                />
-
-                        
-            </>
-        ))}
-        
-    </div>);
+    return (
+        <div>
+            {pokedex.map((pokemon) => (
+                <>
+                    <p>{pokemon.name}</p>
+                    <img
+                        src={
+                            pokemon[`sprites`][`other`][`official-artwork`][
+                                `front_default`
+                            ]
+                        }
+                    />
+                </>
+            ))}
+        </div>
+    );
 }
