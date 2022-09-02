@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
-import Router from "./router/router";
 import { ContextPokedex } from "./context/ContexPokedex";
 import { GlobalStyles } from "./styled";
+import Router from "./router/router";
 
 export default function App() {
     const [pokemons, setPokemons] = useState([]);
@@ -11,13 +11,14 @@ export default function App() {
     const [pokedex, setPokedex] = useState([]);
 
     const getAllPokemons = () => {
+        const url = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=0`;
+
         axios
-            .get("https://pokeapi.co/api/v2/pokemon?limit=20&offset=0")
+            .get(url)
             .then((response) => {
                 setPokemons(response.data.results);
             })
             .catch((error) => {
-                console.log(error);
                 alert("Erro na requisição");
             });
     };
@@ -53,11 +54,21 @@ export default function App() {
         setPokedex([...pokedex, pokeAnalisado]); // aqui usamos o spread, que guarda o copia o estado inicial do pokédex, e adiciona o pokémon que foi analisado antes
     }; // passamos essa função via context para o PokeCard
 
+    const removerPokemon = (pokeAnalisado) => {
+        setPokedex(
+            pokedex.filter((pokemon) => pokemon.id !== pokeAnalisado.id)
+        )// Aqui devemos mapear o estado que já foi populado. Nesse caso, pokedex. Usamos a mesmo logica da função acima. Ou seja, filtramos o estado da pokedex, verificando se o id analizado é diferente do pokémon que está recebendo a ação
+
+        setInfoPokemons(...infoPokemons, pokeAnalisado) 
+        // Aqui precisamos guardar novamente o pokemom, no estado que está sendo mapeado na home. Usamos o spred para copiarmos o estado atual, atualizando-o depois da ação!
+    }
+
     return (
         <ContextPokedex.Provider
             value={{
                 infoPokemons,
                 capturarPokemon,
+                removerPokemon,
                 pokedex,
             }}>
             <Router />
