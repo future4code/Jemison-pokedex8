@@ -13,9 +13,9 @@ import { goToDetailPage } from "../../router/coordinator";
 import { useContext } from "react";
 import {ContextPokedex} from "../../ContextPokedex/ContexPokedex"
 
-export default function PokeCard({ name }) {
+export default function PokeCard() {
     const navigate = useNavigate();
-    const {inforPokemons} = useContext(ContextPokedex);
+    const {inforPokemons, capturarPokemon} = useContext(ContextPokedex);
 
     return (
         <Card>
@@ -28,6 +28,13 @@ export default function PokeCard({ name }) {
                         <p>{pokemom.name}</p>
                         <img src={pokemom[`sprites`][`other`][`official-artwork`][`front_default`]}
                         />
+
+                        <CardActions>
+                            <Button onClick={()=>capturarPokemon(pokemom)}>Adicionar</Button>
+                            <Button onClick={() => goToDetailPage(navigate)}>
+                                Ver detalhes
+                            </Button>
+                        </CardActions>
                     </>
                    ))}
                    
@@ -36,13 +43,6 @@ export default function PokeCard({ name }) {
                     </Typography>
                 </CardContent>
             </CardActionArea>
-
-            <CardActions>
-                <Button>Adicionar</Button>
-                <Button onClick={() => goToDetailPage(navigate)}>
-                    Ver detalhes
-                </Button>
-            </CardActions>
         </Card>
     );
 }
