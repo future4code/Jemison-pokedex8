@@ -8,6 +8,7 @@ import { GlobalStyles } from "./styled";
 export default function App() {
     const [pokemons, setPokemons] = useState([]);
     const [inforPokemons, setInforPokemons] = useState([]);
+    const [pokedex, setPokex] = useState([])
     
   
     const getAllPokemons = () => {
@@ -46,10 +47,22 @@ export default function App() {
       });
     }, [pokemons]);
 
+
+    const capturarPokemon = (pokeAnalizado) =>{
+      setInforPokemons(
+        inforPokemons.filter((pokemom)=>
+          pokemom.id !== pokeAnalizado.id
+        )// Aqui chamamos a funçaõ(estado) que atualiza o seu estado, depois filtramos cada item(pokemon), que esta dentro do estado. comparamos o pokemom pelo id, se o id for diferente, a função executado busca esse id
+      );
+      setPokex([...pokedex, pokeAnalizado]) // aqui usamos o spred, que guarda o copia o estado inicial do pokedex, e adiciona o pokemom que foi analizado antes 
+    } // passamos essa função via contex para o PokeCard
+
     return (
         <ContextPokedex.Provider
             value={{
                 inforPokemons,
+                capturarPokemon,
+                pokedex
             }}
         
         >
