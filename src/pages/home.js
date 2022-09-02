@@ -5,14 +5,14 @@ import { useContext } from "react";
 import { ContextPokedex } from "../context/ContexPokedex";
 import { Body, Tela } from "../styled";
 import PokeList from "../components/pokelist/PokeList";
-import { Header } from "../components/header/Header";
+import { HeaderHome } from "../components/header/HeaderHome";
 
 export default function Home() {
     const { infoPokemons } = useContext(ContextPokedex);
 
     return (
         <Tela>
-            <Header />
+            <HeaderHome />
             <Body>
                 <PokeList pokeInfos={infoPokemons} />
             </Body>

@@ -1,5 +1,10 @@
 import React from "react";
+import { HeaderDetail } from "../components/header/HeaderDetail";
 
-export const Detalhes = () => {
-    return <div>Detalhes</div>;
-};
+export default function Detalhes() {
+    return (
+        <div>
+            <HeaderDetail />
+        </div>
+    )
+}
