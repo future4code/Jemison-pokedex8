@@ -6,5 +6,5 @@ export default function Detalhes() {
         <div>
             <HeaderDetail />
         </div>
-    )
+    );
 }

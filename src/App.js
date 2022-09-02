@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { ContextPokedex } from "./context/ContexPokedex";
 import { GlobalStyles } from "./styled";
-import Router from "./router/router";
+import Router from "./router/Router";
 
 export default function App() {
     const [pokemons, setPokemons] = useState([]);
@@ -57,11 +57,11 @@ export default function App() {
     const removerPokemon = (pokeAnalisado) => {
         setPokedex(
             pokedex.filter((pokemon) => pokemon.id !== pokeAnalisado.id)
-        )// Aqui devemos mapear o estado que já foi populado. Nesse caso, pokedex. Usamos a mesmo logica da função acima. Ou seja, filtramos o estado da pokedex, verificando se o id analizado é diferente do pokémon que está recebendo a ação
+        ); // Aqui devemos mapear o estado que já foi populado. Nesse caso, pokedex. Usamos a mesmo logica da função acima. Ou seja, filtramos o estado da pokedex, verificando se o id analizado é diferente do pokémon que está recebendo a ação
 
-        setInfoPokemons(...infoPokemons, pokeAnalisado) 
+        setInfoPokemons(...infoPokemons, pokeAnalisado);
         // Aqui precisamos guardar novamente o pokemom, no estado que está sendo mapeado na home. Usamos o spred para copiarmos o estado atual, atualizando-o depois da ação!
-    }
+    };
 
     return (
         <ContextPokedex.Provider

@@ -8,12 +8,16 @@ import {
     Botao,
 } from "./StyledPokeList";
 import { useNavigate } from "react-router-dom";
-import { goToDetailPage } from "../../router/coordinator";
+import { goToDetailPage } from "../../router/Coordinator";
 import { ContextPokedex } from "../../context/ContexPokedex";
 
 export default function PokeCard() {
     const navigate = useNavigate();
     const { infoPokemons, capturarPokemon } = useContext(ContextPokedex);
+
+    const alerta = () => {
+        alert("Pokémon Capturado!");
+    };
 
     return (
         <ListaDePokemons>
@@ -31,11 +35,14 @@ export default function PokeCard() {
 
                     <CardContent>
                         <h2>{pokemon.name}</h2>
-                        <p>{}</p>
 
                         <Botoes>
-                            <Botao onClick={() => capturarPokemon(pokemon)}>
-                                Adicionar
+                            <Botao
+                                onClick={() => {
+                                    alerta();
+                                    capturarPokemon(pokemon);
+                                }}>
+                                Capturar
                             </Botao>
                             <Botao onClick={() => goToDetailPage(navigate)}>
                                 Ver detalhes
@@ -46,4 +53,8 @@ export default function PokeCard() {
             ))}
         </ListaDePokemons>
     );
+}
+
+{
+    /* () => capturarPokemon(pokemon) */
 }

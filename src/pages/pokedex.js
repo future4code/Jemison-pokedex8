@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { ContextPokedex } from "../context/ContexPokedex";
 import { HeaderPokedex } from "../components/header/HeaderPokedex";
 import { ListaDePokemons, Card, CardImagem, CardContent, Botoes, Botao } from "../components/pokelist/StyledPokeList";
-import { goToDetailPage } from "../router/coordinator";
+import { goToDetailPage } from "../router/Coordinator";
 
 /// Copiar logica e estrutura do pokecard
 
