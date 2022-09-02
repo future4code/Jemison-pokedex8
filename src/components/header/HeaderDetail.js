@@ -1,17 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { goToPokedexPage } from "../../router/coordinator";
+import { goToHomePage } from "../../router/coordinator";
 import { HeaderBG, HeaderContent, Pokeball } from "./StyledHeader";
 import logo from "../../assets/img/logo.svg";
 
-export const Header = () => {
+export const HeaderDetail = () => {
     const navigate = useNavigate();
 
     return (
         <HeaderBG>
             <HeaderContent>
-                <img src={logo} alt="Logo do Pokedéx" />
-                <Pokeball onClick={() => goToPokedexPage(navigate)}></Pokeball>
+                <img src={logo} alt="Logo do Pokemon" />
+                <Pokeball onClick={() => goToHomePage(navigate)}></Pokeball>
             </HeaderContent>
         </HeaderBG>
     );
