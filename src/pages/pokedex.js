@@ -12,7 +12,7 @@ import { goToDetailPage } from "../router/Coordinator";
 
 export default function Pokedex() {
     const navigate = useNavigate();
-    const { pokedex } = useContext(ContextPokedex);
+    const { pokedex,removerPokemon } = useContext(ContextPokedex);
 
     return (
         <div>
@@ -34,7 +34,7 @@ export default function Pokedex() {
                     <CardContent>
                         <h2>{pokemon.name}</h2>
                         <Botoes>
-                            <Botao>
+                            <Botao onClick={()=>removerPokemon(pokemon)}>
                                 Remover
                             </Botao>
                             <Botao onClick={() => goToDetailPage(navigate)}>
