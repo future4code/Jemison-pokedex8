@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
-import Router from "./router/router";
 import { ContextPokedex } from "./context/ContexPokedex";
 import { GlobalStyles } from "./styled";
+import Router from "./router/router";
 
 export default function App() {
     const [pokemons, setPokemons] = useState([]);
@@ -11,13 +11,14 @@ export default function App() {
     const [pokedex, setPokedex] = useState([]);
 
     const getAllPokemons = () => {
+        const url = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=0`;
+
         axios
-            .get("https://pokeapi.co/api/v2/pokemon?limit=20&offset=0")
+            .get(url)
             .then((response) => {
                 setPokemons(response.data.results);
             })
             .catch((error) => {
-                console.log(error);
                 alert("Erro na requisição");
             });
     };
