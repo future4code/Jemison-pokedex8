@@ -7,6 +7,11 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
 }
 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
 ul {
     list-style: none;
 }
@@ -30,6 +35,4 @@ button {
 
 // HOME
 export const Tela = styled.div``;
-export const Body = styled.body`
-    /* background: #aa3030; */
-`;
+export const Body = styled.body``;

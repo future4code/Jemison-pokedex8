@@ -36,7 +36,7 @@ export const Pokeball = styled.button`
         background-size: contain;
         margin: 0 auto;
         transition: 0.3s;
-        animation: inicio 2s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+        animation: inicio 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     }
 
     &:hover {

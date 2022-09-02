@@ -4,7 +4,6 @@ import {
     Card,
     CardImagem,
     CardContent,
-    Typography,
     Botoes,
     Botao,
 } from "./StyledPokeList";
@@ -22,6 +21,8 @@ export default function PokeCard() {
             {infoPokemons.map((pokemon) => (
                 <Card>
                     <CardImagem>
+                        <p>Nº {pokemon.id}</p>
+
                         <img
                             src={pokemon.sprites.other.home.front_default}
                             // A versão antiga era: src={pokemon[`sprites`][`other`][`official-artwork`][`front_default`]}
@@ -31,7 +32,7 @@ export default function PokeCard() {
 
                     <CardContent>
                         <h2>{pokemon.name}</h2>
-                        
+
                         <Botoes>
                             <Botao onClick={() => capturarPokemon(pokemon)}>
                                 Adicionar
@@ -40,9 +41,6 @@ export default function PokeCard() {
                                 Ver detalhes
                             </Botao>
                         </Botoes>
-                        <Typography
-                            variant="body2"
-                            color="text.secondary"></Typography>
                     </CardContent>
                 </Card>
             ))}
