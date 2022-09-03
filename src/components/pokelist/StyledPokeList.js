@@ -53,10 +53,16 @@ export const Botoes = styled.div`
 
     button:first-child {
         background: #a4a4a4;
+        &:hover {
+            background: #8b8b8b;
+        }
     }
 
     button:last-child {
         background: #ee6b2f;
+        &:hover {
+            background: #da471b;
+        }
     }
 `;
 export const Botao = styled.button`
@@ -66,4 +72,5 @@ export const Botao = styled.button`
     color: #fff;
     font-size: 1rem;
     font-weight: 500;
+    transition: 0.3s;
 `;
