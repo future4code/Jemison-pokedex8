@@ -10,10 +10,12 @@ import {
 import { useNavigate } from "react-router-dom";
 import { goToDetailPage } from "../../router/Coordinator";
 import { ContextPokedex } from "../../context/ContexPokedex";
-
+import { useParams } from "react-router-dom";
 export default function PokeCard() {
     const navigate = useNavigate();
     const { infoPokemons, capturarPokemon } = useContext(ContextPokedex);
+
+    const { id } = useParams();
 
     const alerta = () => {
         alert("Pokémon Capturado!");
@@ -34,17 +36,17 @@ export default function PokeCard() {
                     </CardImagem>
 
                     <CardContent>
-                        <h2>{pokemon.name}</h2>
+                        <h2>{`${pokemon.name?.[0].toUpperCase()}${pokemon.name?.substring(1) ?? <p>Carregando</p>}`}</h2>
 
                         <Botoes>
                             <Botao
                                 onClick={() => {
                                     alerta();
-                                    capturarPokemon(pokemon);
+                                    capturarPokemon(pokemon, id);
                                 }}>
                                 Capturar
                             </Botao>
-                            <Botao onClick={() => goToDetailPage(navigate)}>
+                            <Botao onClick={() => goToDetailPage(navigate, id)}>
                                 Ver detalhes
                             </Botao>
                         </Botoes>

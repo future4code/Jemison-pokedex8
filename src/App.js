@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { ContextPokedex } from "./context/ContexPokedex";
 import { GlobalStyles } from "./styled";
-import Router from "./router/Router";
+import { Router } from "./router/router";
 
 export default function App() {
     const [pokemons, setPokemons] = useState([]);
@@ -15,11 +15,11 @@ export default function App() {
 
         axios
             .get(url)
-            .then((response) => {
-                setPokemons(response.data.results);
+            .then((res) => {
+                setPokemons(res.data.results);
             })
-            .catch((error) => {
-                alert("Erro na requisição");
+            .catch((err) => {
+                alert(err.data.results);
             });
     };
 

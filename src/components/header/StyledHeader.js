@@ -65,3 +65,75 @@ export const Pokeball = styled.button`
         }
     }
 `;
+
+
+export const ReturnToHome_Details = styled.button`
+    background: none;
+    border: none;
+    transition: 0.3s;
+    position: absolute;
+    left: 15px;
+    padding: 5px;
+
+    &:hover {
+        animation: hover 0.3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    }
+
+    @keyframes inicio {
+        from {
+            transform: translate(-500px, 0) rotate(0);
+            opacity: 0;
+        }
+
+        to {
+            transform: translate(0, 0) rotate(360deg);
+            opacity: 1;
+        }
+    }
+
+    @keyframes hover {
+        from {
+            transform: translate(-5px, 0);
+        }
+
+        to {
+            transform: translate(0, 0);
+        }
+    }
+`;
+
+export const ReturnToHome_Pokedex = styled.button`
+    background: none;
+    border: none;
+    transition: 0.3s;
+    position: fixed;
+    right: 15px;
+    padding: 5px;
+
+    &:hover {
+        animation: hover 0.3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    }
+
+    @keyframes inicio {
+        from {
+            transform: translate(-500px, 0) rotate(0);
+            opacity: 0;
+        }
+
+        to {
+            transform: translate(0, 0) rotate(360deg);
+            opacity: 1;
+        }
+    }
+
+    @keyframes hover {
+        from {
+            transform: translate(-5px, 0);
+        }
+
+        to {
+            transform: translate(0, 0);
+        }
+    }
+`;
+
