@@ -1,16 +1,27 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { goToBack } from "../../router/Coordinator";
-import { HeaderBG, HeaderContent, Pokeball, ReturnToHome_Pokedex } from "./StyledHeader";
+import { goToHomePage } from "../../router/Coordinator";
+import {
+    HeaderBG,
+    HeaderContent,
+    ReturnIcon,
+    ReturnToHome,
+} from "./StyledHeader";
 import logo from "../../assets/img/pokedex_logo.png";
-import { ImRedo2 } from "react-icons/im";
+import back from "../../assets/img/back.svg";
+
 export const HeaderPokedex = () => {
     const navigate = useNavigate();
 
     return (
         <HeaderBG>
             <HeaderContent>
-                <ReturnToHome_Pokedex onClick={() => goToBack(navigate)}><ImRedo2 size="25px" /></ReturnToHome_Pokedex>
+                <ReturnToHome onClick={() => goToHomePage(navigate)}>
+                    <ReturnIcon
+                        src={back}
+                        title="Voltar para a página inicial"
+                    />
+                </ReturnToHome>
                 <img src={logo} alt="Logo do Pokedéx" />
             </HeaderContent>
         </HeaderBG>

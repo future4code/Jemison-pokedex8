@@ -80,18 +80,14 @@ export const Nome = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-
-
-
-`
+`;
 
 export const SessãoImagens = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
-`
+`;
 export const CardImagemDescrição = styled.section`
     display: flex;
     align-items: center;
@@ -115,12 +111,12 @@ export const StatusContainer1 = styled.section`
     width: 200px;
     background: #f2f2f2;
     border-radius: 10px;
-`
+`;
 
 export const Section = styled.section`
     height: 300px;
     width: 300px;
-`
+`;
 
 export const SectionType = styled.section`
     display: flex;
@@ -130,8 +126,7 @@ export const SectionType = styled.section`
     width: 300px;
     border-radius: 10px;
     background: #f2f2f2;
-
-`
+`;
 
 export const StatusContainer2 = styled.section`
     display: flex;
@@ -142,14 +137,14 @@ export const StatusContainer2 = styled.section`
     width: 300px;
     background: #f2f2f2;
     border-radius: 10px;
-`
+`;
 
 export const Title = styled.h2`
     margin: 0 auto;
-`
+`;
 
 export const Details = styled.li`
     display: flex;
     justify-content: flex-start;
     margin: 10px;
-`
+`;

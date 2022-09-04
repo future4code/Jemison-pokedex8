@@ -1,7 +1,6 @@
 // O usuário deve receber uma lista de pokemons vinda da API. Ele pode armazenar Pokemons em sua Pokedex clicando em cada um.
 
-import React from "react";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { ContextPokedex } from "../context/ContexPokedex";
 import { Body, Tela } from "../styled";
 import PokeList from "../components/pokelist/PokeList";

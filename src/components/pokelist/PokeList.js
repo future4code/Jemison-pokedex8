@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { useParams } from "react-router-dom";
 import {
     ListaDePokemons,
     Card,
@@ -10,16 +11,14 @@ import {
 import { useNavigate } from "react-router-dom";
 import { goToDetailPage } from "../../router/Coordinator";
 import { ContextPokedex } from "../../context/ContexPokedex";
-import { useParams } from "react-router-dom";
-export default function PokeCard() {
+import { Modal } from "../modal/Modal";
+
+export default function PokeList() {
     const navigate = useNavigate();
     const { infoPokemons, capturarPokemon } = useContext(ContextPokedex);
+    const [isModalVisible, setIsModalVisible] = useState(false);
 
     const { id } = useParams();
-
-    const alerta = () => {
-        alert("Pokémon Capturado!");
-    };
 
     return (
         <ListaDePokemons>
@@ -36,16 +35,19 @@ export default function PokeCard() {
                     </CardImagem>
 
                     <CardContent>
-                        <h2>{`${pokemon.name?.[0].toUpperCase()}${pokemon.name?.substring(1) ?? <p>Carregando</p>}`}</h2>
+                        <h2>{`${pokemon.name?.[0].toUpperCase()}${
+                            pokemon.name?.substring(1) ?? <p>Carregando...</p>
+                        }`}</h2>
 
                         <Botoes>
                             <Botao
                                 onClick={() => {
-                                    alerta();
+                                    setIsModalVisible(true);
                                     capturarPokemon(pokemon, id);
                                 }}>
                                 Capturar
                             </Botao>
+
                             <Botao onClick={() => goToDetailPage(navigate, id)}>
                                 Ver detalhes
                             </Botao>
@@ -53,10 +55,12 @@ export default function PokeCard() {
                     </CardContent>
                 </Card>
             ))}
+            
+            {isModalVisible ? (
+                <Modal onClose={() => setIsModalVisible(false)}>
+                    <h2>Pokémon capturado!</h2>
+                </Modal>
+            ) : null}
         </ListaDePokemons>
     );
-}
-
-{
-    /* () => capturarPokemon(pokemon) */
 }

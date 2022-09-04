@@ -4,15 +4,15 @@ import axios from "axios";
 //Hook personalizado para buscar dados de qualquer API
 
 export function useFetch(url) {
-  const [data, setData] = useState([])
-  const [erro, setErro] = useState([])
+    const [data, setData] = useState([]);
+    const [erro, setErro] = useState([]);
 
-  useEffect(() => {
-   axios.get(url)
-    .then(response => setData(response.data))
-    .catch(error => setErro(error))
-  }, [url]) 
+    useEffect(() => {
+        axios
+            .get(url)
+            .then((response) => setData(response.data))
+            .catch((error) => setErro(error));
+    }, [url]);
 
-
-  return {data, erro}
+    return { data, erro };
 }

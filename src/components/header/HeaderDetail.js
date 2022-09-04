@@ -1,9 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { goToHomePage, goToPokedexPage } from "../../router/Coordinator";
-import { HeaderBG, HeaderContent, Pokeball, ReturnToHome_Details } from "./StyledHeader";
+import { goToHomePage } from "../../router/Coordinator";
+import {
+    HeaderBG,
+    HeaderContent,
+    ReturnIcon,
+    ReturnToHome,
+} from "./StyledHeader";
 import logo from "../../assets/img/logo.svg";
-import { ImUndo2 } from "react-icons/im"
+import back from "../../assets/img/back.svg";
 
 export const HeaderDetail = () => {
     const navigate = useNavigate();
@@ -11,9 +16,14 @@ export const HeaderDetail = () => {
     return (
         <HeaderBG>
             <HeaderContent>
-                <ReturnToHome_Details onClick={() => goToHomePage(navigate)}><ImUndo2 size="25px" /></ReturnToHome_Details>
+                <ReturnToHome onClick={() => goToHomePage(navigate)}>
+                    <ReturnIcon
+                        src={back}
+                        title="Voltar para a página inicial"
+                    />
+                </ReturnToHome>
+
                 <img src={logo} alt="Logo do Pokemon" />
-                <Pokeball onClick={() => goToPokedexPage(navigate)}></Pokeball>
             </HeaderContent>
         </HeaderBG>
     );
