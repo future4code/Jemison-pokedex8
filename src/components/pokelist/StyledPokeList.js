@@ -33,6 +33,14 @@ export const CardImagem = styled.div`
 
     p {
         color: #a4a4a4;
+        text-transform: capitalize;
+
+        :last-child {
+            background: #ccc;
+            border-radius: 4px;
+            text-align: center;
+            width: max-content;
+        }
     }
 `;
 
@@ -147,4 +155,10 @@ export const Details = styled.li`
     display: flex;
     justify-content: flex-start;
     margin: 10px;
+`;
+
+export const Modal = styled.h2`
+    span {
+        text-transform: capitalize;
+    }
 `;

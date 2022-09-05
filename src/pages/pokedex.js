@@ -31,11 +31,8 @@ export default function Pokedex() {
                             <p>Nº {pokemon.id}</p>
 
                             <img
-                                src={
-                                    pokemon[`sprites`][`other`][
-                                        `official-artwork`
-                                    ][`front_default`]
-                                }
+                                src={pokemon.sprites.other.home.front_default}
+                                alt={pokemon.name}
                             />
                         </CardImagem>
 

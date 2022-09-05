@@ -15,7 +15,8 @@ import { Modal } from "../modal/Modal";
 
 export default function PokeList() {
     const navigate = useNavigate();
-    const { infoPokemons, capturarPokemon } = useContext(ContextPokedex);
+    const { infoPokemons, capturarPokemon, pokedex } =
+        useContext(ContextPokedex);
     const [isModalVisible, setIsModalVisible] = useState(false);
 
     const { id } = useParams();
@@ -29,9 +30,10 @@ export default function PokeList() {
 
                         <img
                             src={pokemon.sprites.other.home.front_default}
-                            // A versão antiga era: src={pokemon[`sprites`][`other`][`official-artwork`][`front_default`]}
                             alt={pokemon.name}
                         />
+
+                        <p>{pokemon.types[0].type.name}</p>
                     </CardImagem>
 
                     <CardContent>
@@ -48,19 +50,30 @@ export default function PokeList() {
                                 Capturar
                             </Botao>
 
-                            <Botao onClick={() => goToDetailPage(navigate, pokemon.id)}>
+                            <Botao
+                                onClick={() =>
+                                    goToDetailPage(navigate, pokemon.id)
+                                }>
                                 Ver detalhes
                             </Botao>
                         </Botoes>
                     </CardContent>
                 </Card>
             ))}
-            
-            {isModalVisible ? (
-                <Modal onClose={() => setIsModalVisible(false)}>
-                    <h2>Pokémon capturado!</h2>
-                </Modal>
-            ) : null}
+
+            {pokedex.map((pokemon) =>
+                isModalVisible ? (
+                    <Modal onClose={() => setIsModalVisible(false)}>
+                        <h2>
+                            <span>{pokemon.name}</span> capturado!
+                        </h2>
+                        <img
+                            src={pokemon.sprites.front_default}
+                            alt={pokemon.name}
+                        />
+                    </Modal>
+                ) : null
+            )}
         </ListaDePokemons>
     );
 }
