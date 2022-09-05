@@ -14,7 +14,11 @@ export const ModalBG = styled.div`
 `;
 
 export const ModalContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #fff;
+    height: 200px;
     width: 600px;
     min-width: 300px;
     padding: 40px;
