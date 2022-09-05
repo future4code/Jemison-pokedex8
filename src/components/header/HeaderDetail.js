@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { goToHomePage } from "../../router/Coordinator";
+import { goToHomePage } from "../../router/coordinator";
 import {
     HeaderBG,
     HeaderContent,
