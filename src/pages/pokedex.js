@@ -13,7 +13,7 @@ import {
     Botoes,
     Botao,
 } from "../components/pokelist/StyledPokeList";
-import { goToDetailPage } from "../router/Coordinator";
+import { goToDetailPage } from "../router/coordinator";
 
 /// Copiar logica e estrutura do pokecard
 

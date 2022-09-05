@@ -9,7 +9,7 @@ import {
     Botao,
 } from "./StyledPokeList";
 import { useNavigate } from "react-router-dom";
-import { goToDetailPage } from "../../router/Coordinator";
+import { goToDetailPage } from "../../router/coordinator";
 import { ContextPokedex } from "../../context/ContexPokedex";
 import { Modal } from "../modal/Modal";
 
@@ -48,7 +48,7 @@ export default function PokeList() {
                                 Capturar
                             </Botao>
 
-                            <Botao onClick={() => goToDetailPage(navigate, id)}>
+                            <Botao onClick={() => goToDetailPage(navigate, pokemon.id)}>
                                 Ver detalhes
                             </Botao>
                         </Botoes>
