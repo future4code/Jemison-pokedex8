@@ -32,8 +32,6 @@ export default function PokeList() {
                             src={pokemon.sprites.other.home.front_default}
                             alt={pokemon.name}
                         />
-
-                        <p>{pokemon.types[0].type.name}</p>
                     </CardImagem>
 
                     <CardContent>
