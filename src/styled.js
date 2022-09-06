@@ -12,7 +12,7 @@ body {
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-ul {
+ul,li {
     list-style: none;
 }
 

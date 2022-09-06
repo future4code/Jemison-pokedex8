@@ -80,16 +80,16 @@ export default function Pokedex() {
                                 ),
                             }}>
                             <div>
-                                <p>Nº {pokemon.id}</p>
+                                <p>{pokemon.id}</p>
                                 <TiposPokemon>
-                                    <p
+                                    <span
                                         style={{
                                             background: getTypeColor(
                                                 pokemon.types[0].type.name
                                             ),
                                         }}>
                                         {pokemon.types[0].type.name}
-                                    </p>
+                                    </span>
                                 </TiposPokemon>
                             </div>
 
@@ -109,7 +109,10 @@ export default function Pokedex() {
                                     Remover
                                 </Botao>
 
-                                <Botao onClick={() => goToDetailPage(navigate)}>
+                                <Botao
+                                    onClick={() =>
+                                        goToDetailPage(navigate, pokemon.id)
+                                    }>
                                     Ver detalhes
                                 </Botao>
                             </Botoes>

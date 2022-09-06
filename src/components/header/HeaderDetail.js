@@ -1,9 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { goToHomePage } from "../../router/Coordinator";
+import { goToHomePage, goToPokedexPage } from "../../router/Coordinator";
 import {
     HeaderBG,
     HeaderContent,
+    PokeballIcon,
     ReturnIcon,
     ReturnToHome,
 } from "./StyledHeader";
@@ -24,6 +25,9 @@ export const HeaderDetail = () => {
                 </ReturnToHome>
 
                 <img src={logo} alt="Logo do Pokemon" />
+                <PokeballIcon
+                    onClick={() => goToPokedexPage(navigate)}
+                    title="Conferir Pokémons capturados"></PokeballIcon>
             </HeaderContent>
         </HeaderBG>
     );

@@ -3,18 +3,21 @@ import { HeaderDetail } from "../components/header/HeaderDetail";
 import { useFetch } from "../hooks/useFetch";
 import { useParams } from "react-router-dom";
 import {
-    ListaDePokemons,
-    CardImagemDescrição,
-    CardContent,
-    SessãoImagens,
-    Nome,
-    Section,
-    SectionType,
     Details,
-    Title,
-    StatusContainer1,
-    StatusContainer2,
-} from "../components/pokelist/StyledPokeList";
+    Titulo,
+    ImagensPokemon,
+    ImagemPokemon,
+    ContainerDetalhes,
+    DetailsTitle,
+    DetailsContent,
+    StatsPokemon,
+    Contents,
+    Habilidades,
+    Evolucao,
+    Evolucoes,
+    BaseDeStatus,
+    TypesContent,
+} from "../components/detalhes/StyledDetalhes";
 
 export function Detalhes() {
     //Pega o id passado pelo parâmetros da URL
@@ -30,150 +33,135 @@ export function Detalhes() {
 
     const stats = (stats) => data.stats?.[0].base_stat;
 
-
     return (
         <div>
             <HeaderDetail />
-            <h1>{`Nº${data.id}`}</h1>
-            <Nome>
-                <h1>{`${data.name?.[0].toUpperCase()}${
-                    data.name?.substring(1) ?? <p>Carregando</p>
-                }`}</h1>
-            </Nome>
 
-            <ListaDePokemons>
-                <SessãoImagens>
-                    <CardImagemDescrição>
+            <Titulo>
+                <h1>
+                    <span>{data.id} - </span>
+                    {data.name}
+                </h1>
+            </Titulo>
+
+            <ContainerDetalhes>
+                <ImagensPokemon>
+                    <ImagemPokemon title="Imagem frontal">
                         <img
                             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
                             alt={data.name}
                         />
-                    </CardImagemDescrição>
-
-                    <CardImagemDescrição>
+                    </ImagemPokemon>
+                    <ImagemPokemon title="Imagem de costas">
                         <img
                             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${id}.png`}
                             alt={data.name}
                         />
-                    </CardImagemDescrição>
-                </SessãoImagens>
+                    </ImagemPokemon>
+                </ImagensPokemon>
 
-                <CardContent></CardContent>
+                <DetailsContent>
+                    <BaseDeStatus>
+                        <h2>Base de status</h2>
+                        <li>
+                            <span>Vida:</span>{" "}
+                            {`${data.stats?.[0].base_stat}` ?? `Carregando`}
+                        </li>
+                        <li>
+                            <span>Ataque:</span>{" "}
+                            {`${data.stats?.[1].base_stat}` ?? `Carregando`}
+                        </li>
+                        <li>
+                            <span>Defesa:</span>{" "}
+                            {`${data.stats?.[2].base_stat}` ?? `Carregando`}
+                        </li>
+                        <li>
+                            <span>Ataque Especial:</span>{" "}
+                            {`${data.stats?.[3].base_stat}` ?? `Carregando`}
+                        </li>
+                        <li>
+                            <span>Defesa Especial:</span>{" "}
+                            {`${data.stats?.[4].base_stat}` ?? `Carregando`}
+                        </li>
+                        <li>
+                            <span>Velocidade:</span>{" "}
+                            {`${data.stats?.[5].base_stat}` ?? `Carregando`}
+                        </li>
+                    </BaseDeStatus>
+                </DetailsContent>
 
-                <StatusContainer1>
-                    <Title>stats</Title>
-                    <Details>
-                        <p>
-                            Vida: <span >{`${data.stats?.[0].base_stat}` ?? `Carregando`}</span>
-                        </p>
-                    </Details>
-                    <Details>
-                        <p>
-                            Ataque: <span>{`${data.stats?.[1].base_stat}` ?? `Carregando`}</span>
-                        </p>
-                    </Details>
-                    <Details>
-                        <p>
-                            Defesa: <span>{`${data.stats?.[2].base_stat}` ?? `Carregando`}</span>
-                        </p>
-                    </Details>
-                    <Details>
-                        <p>
-                            Ataque Especial:{" "}
-                            <span>{`${data.stats?.[3].base_stat}` ?? `Carregando`}</span>
-                        </p>
-                    </Details>
-                    <Details>
-                        <p>
-                            Defesa Especial:{" "}
-                            <span>{`${data.stats?.[4].base_stat}` ?? `Carregando`}</span>
-                        </p>
-                    </Details>
-                    <Details>
-                        <p>
-                            Velocidade: <span>{`${data.stats?.[5].base_stat}` ?? `Carregando`}</span>
-                        </p>
-                    </Details>
-                </StatusContainer1>
-                <Section>
-                    <SectionType>
-                        <p>
-                            Type 1:{" "}
+                <Contents>
+                    <TypesContent>
+                        <li>
+                            <span>Tipo 1:</span>{" "}
                             {`${
                                 type1(data.types)?.[0].toUpperCase() ?? (
-                                    <p>Carregando</p>
+                                    <li>Carregando</li>
                                 )
                             }${
                                 type1(data.types)?.substring(1) ?? (
-                                    <p>Carregando</p>
+                                    <li>Carregando</li>
                                 )
                             }`}
-                        </p>
-                        <p>
-                            Type 2:{" "}
+                        </li>
+
+                        <li>
+                            <span>Tipo 2:</span>{" "}
                             {`${
                                 type2(data.types)?.[0].toUpperCase() ?? (
-                                    <p>Carregando</p>
+                                    <li>Carregando</li>
                                 )
                             }${
                                 type2(data.types)?.substring(1) ?? (
-                                    <p>Carregando</p>
+                                    <li>Carregando</li>
                                 )
                             }`}
-                        </p>
-                    </SectionType>
-                    <StatusContainer2>
-                        <Title>Habilidades</Title>
-                        <Details>
-                            <p>
-                                Habilidade 1:{" "}
-                                <span>
-                                    {`${
-                                        ability1(
-                                            data.abilities
-                                        )?.[0].toUpperCase() ?? (
-                                            <p>Carregando</p>
-                                        )
-                                    }${
-                                        ability1(data.abilities)?.substring(
-                                            1
-                                        ) ?? <p>Carregando</p>
-                                    }`}
-                                </span>
-                            </p>
-                        </Details>
-                        <Details>
-                            <p>
-                                Habilidade 2:{" "}
-                                <span>
-                                    {`${
-                                        ability2(
-                                            data.abilities
-                                        )?.[0].toUpperCase() ?? (
-                                            <p>Carregando</p>
-                                        )
-                                    }${
-                                        ability2(data.abilities)?.substring(
-                                            1
-                                        ) ?? <p>Carregando</p>
-                                    }`}
-                                </span>
-                            </p>
-                        </Details>
-                        <Title>Evoluções</Title>
-                        <Details>
-                            <p>
-                                Pré-evolução: <span>{`**`}</span>
-                            </p>
-                        </Details>
-                        <Details>
-                            <p>
-                                Evolução: <span>{`**`}</span>
-                            </p>
-                        </Details>
-                    </StatusContainer2>
-                </Section>
-            </ListaDePokemons>
+                        </li>
+                    </TypesContent>
+
+                    <DetailsContent>
+                        <Habilidades>
+                            <h2>Habilidades</h2>
+
+                            <li>
+                                <span>Habilidade 1:</span>{" "}
+                                {`${
+                                    ability1(
+                                        data.abilities
+                                    )?.[0].toUpperCase() ?? <li>Carregando</li>
+                                }${
+                                    ability1(data.abilities)?.substring(1) ?? (
+                                        <li>Carregando</li>
+                                    )
+                                }`}
+                            </li>
+
+                            <li>
+                                <span>Habilidade 2:</span>{" "}
+                                {`${
+                                    ability2(
+                                        data.abilities
+                                    )?.[0].toUpperCase() ?? <li>Carregando</li>
+                                }${
+                                    ability2(data.abilities)?.substring(1) ?? (
+                                        <li>Carregando</li>
+                                    )
+                                }`}
+                            </li>
+                        </Habilidades>
+
+                        <Evolucoes>
+                            <h2>Evoluções</h2>
+                            <li>
+                                <span>Pré-evolução:</span> {`**`}
+                            </li>
+                            <li>
+                                <span>Evolução:</span> {`**`}
+                            </li>
+                        </Evolucoes>
+                    </DetailsContent>
+                </Contents>
+            </ContainerDetalhes>
         </div>
     );
 }

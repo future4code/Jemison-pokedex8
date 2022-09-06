@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { goToDetailPage } from "../../router/Coordinator";
 import { ContextPokedex } from "../../context/ContexPokedex";
 import { Modal } from "../modal/Modal";
+import bgCard from "../../assets/img/bgcard.svg";
 
 export default function PokeList() {
     const navigate = useNavigate();
@@ -77,18 +78,18 @@ export default function PokeList() {
                                 pokemon.types[0].type.name
                             ),
                         }}>
-                            
                         <div>
-                            <p>Nº {pokemon.id}</p>
+                            <p>{pokemon.id}</p>
+
                             <TiposPokemon>
-                                <p
+                                <span
                                     style={{
                                         background: getTypeColor(
                                             pokemon.types[0].type.name
                                         ),
                                     }}>
                                     {pokemon.types[0].type.name}
-                                </p>
+                                </span>
                             </TiposPokemon>
                         </div>
 
@@ -109,7 +110,7 @@ export default function PokeList() {
                             <Botao
                                 onClick={() => {
                                     setIsModalVisible(true);
-                                    capturarPokemon(pokemon, id);
+                                    capturarPokemon(pokemon);
                                 }}>
                                 Capturar
                             </Botao>
