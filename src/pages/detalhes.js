@@ -120,7 +120,7 @@ export function Detalhes() {
                         </p>
                     </SectionType>
                     <StatusContainer2>
-                        <Title>Abilidades</Title>
+                        <Title>Habilidades</Title>
                         <Details>
                             <p>
                                 Habilidade 1:{" "}
