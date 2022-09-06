@@ -10,7 +10,7 @@ import {
     TiposPokemon,
 } from "./StyledPokeList";
 import { useNavigate } from "react-router-dom";
-import { goToDetailPage } from "../../router/coordinator";
+import { goToDetailPage } from "../../router/Coordinator";
 import { ContextPokedex } from "../../context/ContexPokedex";
 import { Modal } from "../modal/Modal";
 

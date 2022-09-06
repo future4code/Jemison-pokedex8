@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { goToPokedexPage } from "../../router/coordinator";
+import { goToPokedexPage } from "../../router/Coordinator";
 import { HeaderBG, HeaderContent, PokeballIcon } from "./StyledHeader";
 import logo from "../../assets/img/logo.svg";
 
