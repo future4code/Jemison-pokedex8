@@ -13,7 +13,6 @@ import { useNavigate } from "react-router-dom";
 import { goToDetailPage } from "../../router/Coordinator";
 import { ContextPokedex } from "../../context/ContexPokedex";
 import { Modal } from "../modal/Modal";
-import bgCard from "../../assets/img/bgcard.svg";
 
 export default function PokeList() {
     const navigate = useNavigate();

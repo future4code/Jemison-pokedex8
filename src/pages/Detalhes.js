@@ -3,17 +3,13 @@ import { HeaderDetail } from "../components/header/HeaderDetail";
 import { useFetch } from "../hooks/useFetch";
 import { useParams } from "react-router-dom";
 import {
-    Details,
     Titulo,
     ImagensPokemon,
     ImagemPokemon,
     ContainerDetalhes,
-    DetailsTitle,
     DetailsContent,
-    StatsPokemon,
     Contents,
     Habilidades,
-    Evolucao,
     Evolucoes,
     BaseDeStatus,
     TypesContent,
