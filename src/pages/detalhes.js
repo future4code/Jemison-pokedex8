@@ -28,6 +28,9 @@ export function Detalhes() {
     const ability1 = (abilities) => abilities?.[0].ability.name;
     const ability2 = (abilities) => abilities?.[1].ability.name;
 
+    const stats = (stats) => data.stats?.[0].base_stat;
+
+
     return (
         <div>
             <HeaderDetail />
@@ -42,14 +45,14 @@ export function Detalhes() {
                 <SessãoImagens>
                     <CardImagemDescrição>
                         <img
-                            src={`https://cdn.traction.one/pokedex/pokemon/${id}.png`}
+                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
                             alt={data.name}
                         />
                     </CardImagemDescrição>
 
                     <CardImagemDescrição>
                         <img
-                            src={`https://cdn.traction.one/pokedex/pokemon/${id}.png`}
+                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${id}.png`}
                             alt={data.name}
                         />
                     </CardImagemDescrição>
@@ -58,37 +61,37 @@ export function Detalhes() {
                 <CardContent></CardContent>
 
                 <StatusContainer1>
-                    <Title>Stats</Title>
+                    <Title>stats</Title>
                     <Details>
                         <p>
-                            Vida: <span>{`${88} *` ?? `Carregando`}</span>
+                            Vida: <span >{`${data.stats?.[0].base_stat}` ?? `Carregando`}</span>
                         </p>
                     </Details>
                     <Details>
                         <p>
-                            Ataque: <span>{`${35} *` ?? `Carregando`}</span>
+                            Ataque: <span>{`${data.stats?.[1].base_stat}` ?? `Carregando`}</span>
                         </p>
                     </Details>
                     <Details>
                         <p>
-                            Defesa: <span>{`${58} *` ?? `Carregando`}</span>
+                            Defesa: <span>{`${data.stats?.[2].base_stat}` ?? `Carregando`}</span>
                         </p>
                     </Details>
                     <Details>
                         <p>
                             Ataque Especial:{" "}
-                            <span>{`${58} *` ?? `Carregando`}</span>
+                            <span>{`${data.stats?.[3].base_stat}` ?? `Carregando`}</span>
                         </p>
                     </Details>
                     <Details>
                         <p>
                             Defesa Especial:{" "}
-                            <span>{`${58} *` ?? `Carregando`}</span>
+                            <span>{`${data.stats?.[4].base_stat}` ?? `Carregando`}</span>
                         </p>
                     </Details>
                     <Details>
                         <p>
-                            Velocidade: <span>{`${58} *` ?? `Carregando`}</span>
+                            Velocidade: <span>{`${data.stats?.[5].base_stat}` ?? `Carregando`}</span>
                         </p>
                     </Details>
                 </StatusContainer1>

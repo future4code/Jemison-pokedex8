@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ContextPokedex } from "./context/ContexPokedex";
 import { GlobalStyles } from "./styled";
-import { Router } from "./router/Router";
+import { Router } from "../src/router/router";
 
 export default function App() {
     const [pokemons, setPokemons] = useState([]);

@@ -11,7 +11,12 @@ export function useFetch(url) {
         axios
             .get(url)
             .then((response) => setData(response.data))
-            .catch((error) => setErro(error));
+            .catch((error) => {
+                setErro(error)
+                console.log(error)
+            }
+            
+            );
     }, [url]);
 
     return { data, erro };
