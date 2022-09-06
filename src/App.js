@@ -7,7 +7,7 @@ import { Router } from "../src/router/Router";
 export default function App() {
     const [pokemons, setPokemons] = useState([]);
     const [infoPokemons, setInfoPokemons] = useState([]);
-    const [pokedex, setPokedex] = useState([]);
+    const [pokedex, setPokedex] = useState([]); 
 
     const getAllPokemons = () => {
         const url = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=0`;
