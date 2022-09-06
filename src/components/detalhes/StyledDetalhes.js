@@ -81,7 +81,19 @@ export const ImagemPokemon = styled.div`
     }
 `;
 
-export const BaseDeStatus = styled.ul``;
+export const BaseDeStatus = styled.ul`
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    li {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        align-items: center;
+        gap: 10px;
+        line-height: 1;
+    }
+`;
 
 export const Habilidades = styled.ul``;
 export const Evolucoes = styled.ul``;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { HeaderDetail } from "../components/header/HeaderDetail";
 import { useFetch } from "../hooks/useFetch";
 import { useParams } from "react-router-dom";
@@ -14,6 +14,7 @@ import {
     BaseDeStatus,
     TypesContent,
 } from "../components/detalhes/StyledDetalhes";
+import { Progress, ProgressDone } from "../components/StyledProgress";
 
 export function Detalhes() {
     //Pega o id passado pelo parâmetros da URL
@@ -28,6 +29,28 @@ export function Detalhes() {
     const ability2 = (abilities) => abilities?.[1].ability.name;
 
     const stats = (stats) => data.stats?.[0].base_stat;
+
+    // Função que simula uma barra de progresso
+    const ProgressFunction = ({ done }) => {
+        const [style, setStyle] = useState({});
+
+        setTimeout(() => {
+            const newStyle = {
+                opacity: 1,
+                width: `${done}%`,
+            };
+
+            setStyle(newStyle);
+        }, 100);
+
+        return (
+            <Progress>
+                <ProgressDone id="progress-done" style={style}>
+                    {done}
+                </ProgressDone>
+            </Progress>
+        );
+    };
 
     return (
         <div>
@@ -59,29 +82,60 @@ export function Detalhes() {
                 <DetailsContent>
                     <BaseDeStatus>
                         <h2>Base de status</h2>
+
                         <li>
-                            <span>Vida:</span>{" "}
-                            {`${data.stats?.[0].base_stat}` ?? `Carregando`}
+                            <p>Vida</p>
+                            <ProgressFunction
+                                done={
+                                    `${data.stats?.[0].base_stat}` ??
+                                    `Carregando`
+                                }
+                            />
                         </li>
                         <li>
-                            <span>Ataque:</span>{" "}
-                            {`${data.stats?.[1].base_stat}` ?? `Carregando`}
+                            <p>Ataque</p>
+                            <ProgressFunction
+                                done={
+                                    `${data.stats?.[1].base_stat}` ??
+                                    `Carregando`
+                                }
+                            />
                         </li>
                         <li>
-                            <span>Defesa:</span>{" "}
-                            {`${data.stats?.[2].base_stat}` ?? `Carregando`}
+                            <p>Defesa</p>
+                            <ProgressFunction
+                                done={
+                                    `${data.stats?.[2].base_stat}` ??
+                                    `Carregando`
+                                }
+                            />
                         </li>
                         <li>
-                            <span>Ataque Especial:</span>{" "}
-                            {`${data.stats?.[3].base_stat}` ?? `Carregando`}
+                            <p>Ataque Especial</p>
+                            <ProgressFunction
+                                done={
+                                    `${data.stats?.[3].base_stat}` ??
+                                    `Carregando`
+                                }
+                            />
                         </li>
                         <li>
-                            <span>Defesa Especial:</span>{" "}
-                            {`${data.stats?.[4].base_stat}` ?? `Carregando`}
+                            <p>Defesa Especial</p>
+                            <ProgressFunction
+                                done={
+                                    `${data.stats?.[4].base_stat}` ??
+                                    `Carregando`
+                                }
+                            />
                         </li>
                         <li>
-                            <span>Velocidade:</span>{" "}
-                            {`${data.stats?.[5].base_stat}` ?? `Carregando`}
+                            <p>Velocidade</p>
+                            <ProgressFunction
+                                done={
+                                    `${data.stats?.[5].base_stat}` ??
+                                    `Carregando`
+                                }
+                            />
                         </li>
                     </BaseDeStatus>
                 </DetailsContent>
