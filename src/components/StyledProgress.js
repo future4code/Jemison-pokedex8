@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Progress = styled.div`
+    margin-top: 10px;
     background: #d8d8d8;
     border-radius: 20px;
     max-width: 100%;
@@ -13,9 +14,10 @@ export const ProgressDone = styled.div`
     border-radius: 20px;
     align-items: center;
     justify-content: center;
-    width: 100px;
+    max-width: 100%;
     height: 100%;
     color: #fff;
     transition: 1s ease;
+    font-family: monospace;
     font-size: 14px;
 `;

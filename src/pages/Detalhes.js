@@ -5,14 +5,11 @@ import { useParams } from "react-router-dom";
 import {
     Titulo,
     ImagensPokemon,
-    ImagemPokemon,
     ContainerDetalhes,
-    DetailsContent,
     Contents,
-    Habilidades,
-    Evolucoes,
-    BaseDeStatus,
-    TypesContent,
+    Body,
+    CardContent,
+    Tipos,
 } from "../components/detalhes/StyledDetalhes";
 import { Progress, ProgressDone } from "../components/StyledProgress";
 
@@ -23,8 +20,12 @@ export function Detalhes() {
     const { data } = useFetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
 
     //funções para mostrar o tipo de pokemon e sua habilidade
-    const type1 = (types) => types?.[0].type.name;
-    const type2 = (types) => types?.[0].type.name;
+    const type1 = () =>
+        data.types?.[0].type.name[0].toUpperCase() +
+        data.types?.[0].type.name.substring(1);
+    const type2 = () =>
+        data.types?.[1].type.name[0].toUpperCase() +
+        data.types?.[1].type.name.substring(1);
     const ability1 = (abilities) => abilities?.[0].ability.name;
     const ability2 = (abilities) => abilities?.[1].ability.name;
 
@@ -52,39 +53,132 @@ export function Detalhes() {
         );
     };
 
+    // Lógicas para alterar as cores de acordo com o tipo de pokemon
+    const getTypeColorContainer = (typePokemon) => {
+        switch (typePokemon) {
+            case "grass":
+                return "#5c9167";
+                break;
+            case "fire":
+                return "#b1856b";
+                break;
+            case "water":
+                return "#66a0b3";
+                break;
+            case "bug":
+                return "#75a465";
+                break;
+            case "normal":
+                return "#bfb38d";
+                break;
+            default:
+                return "#f2f2f2";
+        }
+    };
+
+    const getTypeBackgroundColor = (typePokemon) => {
+        switch (typePokemon) {
+            case "grass":
+                return "#b4d8c3";
+                break;
+            case "fire":
+                return "#efe2cb";
+                break;
+            case "water":
+                return "#abd0d9";
+                break;
+            case "bug":
+                return "#add7a2";
+                break;
+            case "normal":
+                return "#f4edb2";
+                break;
+            default:
+                return "#f2f2f2";
+        }
+    };
+
+    // Lógica maluca pra renderizar os dois tipos de pokemon
+    const tipo = () => {
+        if (
+            data.id === 4 ||
+            data.id === 5 ||
+            data.id === 7 ||
+            data.id === 8 ||
+            data.id === 9 ||
+            data.id === 10 ||
+            data.id === 11 ||
+            data.id === 19 ||
+            data.id === 20
+        ) {
+            return <p>Não possui</p>;
+        } else {
+            return <p>{type2()}</p>;
+        }
+    };
+
     return (
         <div>
             <HeaderDetail />
 
-            <Titulo>
-                <h1>
-                    <span>{data.id} - </span>
-                    {data.name}
-                </h1>
-            </Titulo>
+            <Body
+                style={{
+                    color: getTypeColorContainer(data.types?.[0].type.name),
+                    fontFamily: "monospace",
+                }}>
+                <Titulo>
+                    <h1>
+                        <span>{data.id} - </span>
+                        {data.name}
+                    </h1>
+                </Titulo>
+                <ContainerDetalhes
+                    style={{
+                        background: getTypeColorContainer(
+                            data.types?.[0].type.name
+                        ),
+                    }}>
+                    <ImagensPokemon>
+                        <CardContent
+                            title="Imagem frontal"
+                            style={{
+                                background: getTypeBackgroundColor(
+                                    data.types?.[0].type.name
+                                ),
+                            }}>
+                            <img
+                                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
+                                alt={data.name}
+                                height={200}
+                                width={200}
+                            />
+                        </CardContent>
+                        <CardContent
+                            title="Imagem de costas"
+                            style={{
+                                background: getTypeBackgroundColor(
+                                    data.types?.[0].type.name
+                                ),
+                            }}>
+                            <img
+                                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${id}.png`}
+                                alt={data.name}
+                                height={200}
+                                width={200}
+                            />
+                        </CardContent>
+                    </ImagensPokemon>
 
-            <ContainerDetalhes>
-                <ImagensPokemon>
-                    <ImagemPokemon title="Imagem frontal">
-                        <img
-                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
-                            alt={data.name}
-                        />
-                    </ImagemPokemon>
-                    <ImagemPokemon title="Imagem de costas">
-                        <img
-                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${id}.png`}
-                            alt={data.name}
-                        />
-                    </ImagemPokemon>
-                </ImagensPokemon>
-
-                <DetailsContent>
-                    <BaseDeStatus>
+                    <CardContent
+                        style={{
+                            background: getTypeBackgroundColor(
+                                data.types?.[0].type.name
+                            ),
+                        }}>
                         <h2>Base de status</h2>
 
                         <li>
-                            <p>Vida</p>
+                            <span>Vida</span>
                             <ProgressFunction
                                 done={
                                     `${data.stats?.[0].base_stat}` ??
@@ -92,8 +186,9 @@ export function Detalhes() {
                                 }
                             />
                         </li>
+
                         <li>
-                            <p>Ataque</p>
+                            <span>Ataque</span>
                             <ProgressFunction
                                 done={
                                     `${data.stats?.[1].base_stat}` ??
@@ -101,8 +196,9 @@ export function Detalhes() {
                                 }
                             />
                         </li>
+
                         <li>
-                            <p>Defesa</p>
+                            <span>Defesa</span>
                             <ProgressFunction
                                 done={
                                     `${data.stats?.[2].base_stat}` ??
@@ -110,8 +206,9 @@ export function Detalhes() {
                                 }
                             />
                         </li>
+
                         <li>
-                            <p>Ataque Especial</p>
+                            <span>Ataque Especial</span>
                             <ProgressFunction
                                 done={
                                     `${data.stats?.[3].base_stat}` ??
@@ -119,8 +216,9 @@ export function Detalhes() {
                                 }
                             />
                         </li>
+
                         <li>
-                            <p>Defesa Especial</p>
+                            <span>Defesa Especial</span>
                             <ProgressFunction
                                 done={
                                     `${data.stats?.[4].base_stat}` ??
@@ -128,8 +226,9 @@ export function Detalhes() {
                                 }
                             />
                         </li>
+
                         <li>
-                            <p>Velocidade</p>
+                            <span>Velocidade</span>
                             <ProgressFunction
                                 done={
                                     `${data.stats?.[5].base_stat}` ??
@@ -137,42 +236,34 @@ export function Detalhes() {
                                 }
                             />
                         </li>
-                    </BaseDeStatus>
-                </DetailsContent>
+                    </CardContent>
 
-                <Contents>
-                    <TypesContent>
-                        <li>
-                            <span>Tipo 1:</span>{" "}
-                            {`${
-                                type1(data.types)?.[0].toUpperCase() ?? (
-                                    <li>Carregando</li>
-                                )
-                            }${
-                                type1(data.types)?.substring(1) ?? (
-                                    <li>Carregando</li>
-                                )
-                            }`}
-                        </li>
+                    <Contents>
+                        <CardContent
+                            style={{
+                                background: getTypeBackgroundColor(
+                                    data.types?.[0].type.name
+                                ),
+                            }}>
+                            <Tipos>
+                                <li>
+                                    <span>Tipo 1: </span>
+                                    {type1()}
+                                </li>
+                                <li>
+                                    <span>Tipo 2: </span>
+                                    {tipo()}
+                                </li>
+                            </Tipos>
+                        </CardContent>
 
-                        <li>
-                            <span>Tipo 2:</span>{" "}
-                            {`${
-                                type2(data.types)?.[0].toUpperCase() ?? (
-                                    <li>Carregando</li>
-                                )
-                            }${
-                                type2(data.types)?.substring(1) ?? (
-                                    <li>Carregando</li>
-                                )
-                            }`}
-                        </li>
-                    </TypesContent>
-
-                    <DetailsContent>
-                        <Habilidades>
+                        <CardContent
+                            style={{
+                                background: getTypeBackgroundColor(
+                                    data.types?.[0].type.name
+                                ),
+                            }}>
                             <h2>Habilidades</h2>
-
                             <li>
                                 <span>Habilidade 1:</span>{" "}
                                 {`${
@@ -198,9 +289,14 @@ export function Detalhes() {
                                     )
                                 }`}
                             </li>
-                        </Habilidades>
+                        </CardContent>
 
-                        <Evolucoes>
+                        <CardContent
+                            style={{
+                                background: getTypeBackgroundColor(
+                                    data.types?.[0].type.name
+                                ),
+                            }}>
                             <h2>Evoluções</h2>
                             <li>
                                 <span>Pré-evolução:</span> {`**`}
@@ -208,10 +304,10 @@ export function Detalhes() {
                             <li>
                                 <span>Evolução:</span> {`**`}
                             </li>
-                        </Evolucoes>
-                    </DetailsContent>
-                </Contents>
-            </ContainerDetalhes>
+                        </CardContent>
+                    </Contents>
+                </ContainerDetalhes>
+            </Body>
         </div>
     );
 }
