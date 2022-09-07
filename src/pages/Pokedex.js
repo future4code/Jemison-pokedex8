@@ -1,8 +1,7 @@
 // O usuário deve pode ver os Pokemons que foram adicionados em sua Pokedex.
 
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
 import { ContextPokedex } from "../context/ContexPokedex";
 import { HeaderPokedex } from "../components/header/HeaderPokedex";
 import {
