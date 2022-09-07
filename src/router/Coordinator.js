@@ -2,6 +2,10 @@ export const goToHomePage = (navigate) => {
     navigate("/");
 };
 
+export const goToPreviousPage = (navigate) => {
+    navigate(-1);
+};
+
 export const goToPokedexPage = (navigate) => {
     navigate("/pokedex");
 };

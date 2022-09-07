@@ -70,9 +70,9 @@ export const CardContent = styled.ul`
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background: #f2f2f2;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.2);
     z-index: 2;
 
     h2 {

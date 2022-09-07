@@ -19,7 +19,6 @@ export default function PokeList() {
     const { infoPokemons, capturarPokemon, pokedex } =
         useContext(ContextPokedex);
     const [isModalVisible, setIsModalVisible] = useState(false);
-
     const { id } = useParams();
 
     // Lógica para alterar o background do pokemon pelo tipo
@@ -87,7 +86,7 @@ export default function PokeList() {
                                             pokemon.types[0].type.name
                                         ),
                                     }}>
-                                    {pokemon.types[0].type.name}
+                                    {pokemon.types?.[0].type.name}
                                 </span>
                             </TiposPokemon>
                         </div>

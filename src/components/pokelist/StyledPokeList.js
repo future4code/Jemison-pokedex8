@@ -40,6 +40,7 @@ export const Card = styled.li`
 export const CardImagem = styled.div`
     padding: 20px 30px;
     border-radius: 10px;
+    box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
 
     div {
         display: flex;

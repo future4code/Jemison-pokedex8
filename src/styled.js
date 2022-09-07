@@ -7,6 +7,22 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
 }
 
+html{
+::-webkit-scrollbar {
+  height: 0.5rem;
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ef5350;
+  border-radius: 0.25rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
