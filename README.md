@@ -5,7 +5,7 @@ Nome dos integrantes:
 - Douglas Williams
 - Matheus Queiroz
 
-Link do Surge: [pokedexjemison8.com](https://pokedexjemison8.vercel.app)
+Link do Surge: 
 
 O que funciona:
 - Item 1
