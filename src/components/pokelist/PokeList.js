@@ -16,10 +16,8 @@ import { Modal } from "../modal/Modal";
 
 export default function PokeList() {
     const navigate = useNavigate();
-    const { infoPokemons, capturarPokemon, pokedex } =
-        useContext(ContextPokedex);
+    const { infoPokemons, capturarPokemon, pokedex } =useContext(ContextPokedex);
     const [isModalVisible, setIsModalVisible] = useState(false);
-    const { id } = useParams();
 
     // Lógica para alterar o background do pokemon pelo tipo
     const getTypeBackgroundColor = (typePokemon) => {
@@ -69,7 +67,7 @@ export default function PokeList() {
     return (
         <ListaDePokemons>
             {infoPokemons.map((pokemon) => (
-                <Card>
+                <Card key={pokemon.id}>
                     <CardImagem
                         style={{
                             background: getTypeBackgroundColor(
@@ -126,7 +124,7 @@ export default function PokeList() {
 
             {pokedex.map((pokemon) =>
                 isModalVisible ? (
-                    <Modal onClose={() => setIsModalVisible(false)}>
+                    <Modal key={pokemon.id} onClose={() => setIsModalVisible(false)}>
                         <h2>
                             <span>{pokemon.name}</span> capturado!
                         </h2>
