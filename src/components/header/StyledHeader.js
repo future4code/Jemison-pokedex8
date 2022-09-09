@@ -26,6 +26,7 @@ export const PokeballIcon = styled.button`
     position: fixed;
     right: 15px;
     padding: 5px;
+    z-index: 999999;
 
     &::before {
         display: inline-block;
