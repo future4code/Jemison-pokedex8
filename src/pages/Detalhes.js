@@ -297,12 +297,26 @@ export function Detalhes() {
                                     data.types?.[0].type.name
                                 ),
                             }}>
-                            <h2>Evoluções</h2>
+                      <h2> Movimentos </h2>
                             <li>
-                                <span>Pré-evolução:</span> {`**`}
+                                <span> Movimento 1: </span> {` `}
+                                {`${data.moves?.[0].move.name?.[0].toUpperCase() ?? <li>Carregando</li>}${
+                                    data.moves?.[0].move.name?.substring(1) ?? <li>Carregando</li>}`}
                             </li>
                             <li>
-                                <span>Evolução:</span> {`**`}
+                                <span> Movimento 2: </span> {` `}
+                                {`${data.moves?.[1].move.name?.[0].toUpperCase() ?? <li>Carregando</li>}${
+                                    data.moves?.[1].move.name?.substring(1) ?? <li>Carregando</li>}`}
+                            </li>
+                            <li>
+                                <span> Movimento 3: </span> {` `}
+                                {`${data.moves?.[3].move.name?.[0].toUpperCase() ?? <li>Carregando</li>}${
+                                    data.moves?.[3].move.name?.substring(1) ?? <li>Carregando</li>}`}
+                            </li>
+                            <li>
+                                <span> Movimento 4: </span> {` `}
+                                {`${data.moves?.[4].move.name?.[0].toUpperCase() ?? <li>Carregando</li>}${
+                                    data.moves?.[4].move.name?.substring(1) ?? <li>Carregando</li>}`}
                             </li>
                         </CardContent>
                     </Contents>
