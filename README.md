@@ -6,6 +6,7 @@ Nome dos integrantes:
 - Matheus Queiroz
 
 Link do Surge: https://jemisonpokedex8.surge.sh
+               https://jemisonpokedex-8.surge.sh
 
 O que funciona:
 - Item 1

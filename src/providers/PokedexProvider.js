@@ -7,9 +7,9 @@ export function PokedexProvider (props) {
     const [pokemons, setPokemons] = useState([]);
     const [infoPokemons, setInfoPokemons] = useState([]);
     const [pokedex, setPokedex] = useState([]); 
-
+    
     const getAllPokemons = () => {
-        const url = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=0`;
+        const url = `https://pokeapi.co/api/v2/pokemon?limit=150&offset=0`;
 
         axios
             .get(url)
@@ -32,7 +32,7 @@ export function PokedexProvider (props) {
                 .get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
                 .then((response) => {
                     endpoints.push(response.data);
-                    if (endpoints.length === 20) {
+                    if (endpoints.length === 150) {
                         const ordenaListaPokemons = endpoints.sort((a, b) => {
                             return a.id - b.id;
                         });
