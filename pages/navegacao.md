@@ -1,9 +1,9 @@
 ## 📚 Índice
 
-🔖 [Imagens](#-imagens) <br>
+🔖 [Imagens](#imagens) <br>
 🔖 [Integrantes](#integrantes)<br>
-🔖 [Funciona](#-funciona)<br>
-🔖 [Não funciona](#-nao-funciona)<br>
+🔖 [Funciona](#funciona)<br>
+🔖 [Não funciona](#nao-funciona)<br>
 
 ## Imagens
 
