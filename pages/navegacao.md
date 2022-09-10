@@ -50,11 +50,14 @@
 
 ### O que funciona
 
--   Item 1 - Home , Pokedex e Detalhes (navegação das páginas)
--   Item 2 - Capturar - Excluir - Detalhes
+-   O projeto está responsivo.
+-   Home: o usuário recebe uma lista de pokemons vinda da API. Ele pode armazenar Pokemons em sua Pokedex clicando em cada um. Ao clicar no botão de adicionar, o card do Pokemon clicado desaparece da tela, para que o usuário não consiga adicionar duas vezes o mesmo Pokemon.
+-   Pokedex: o usuário pode ver os Pokemons que foram adicionados em sua Pokedex. Em cada card de Pokemon existe um botão para removê-lo da Pokedex e um outro botão para acessar os detalhes do Pokemon. 
+-   Detalhe do Pokemon: É possível ir para uma página de detalhes do Pokemon ao clicar no mesmo, estando tanto na Home quanto na Pokedex.
 
 ### O que não funciona
 
--   Item 3 - Após capturar um Pokemon e tentar retornar para a Home, não há renderização, sendo necessário atualizar a página.
+-   Pokedex: Após capturar um Pokemon e tentar retornar para a Home, não há renderização, sendo necessário atualizar a página.
+-   Detalhe do Pokemon: No cabeçalho, não implementamos um botão para adicionar ou remover da Pokedex a partir da página de detalhes. 
 
 <b>[⬅ Voltar ao índice](../README.md#índice)</b>
