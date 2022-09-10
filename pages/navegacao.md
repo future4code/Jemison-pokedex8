@@ -1,8 +1,10 @@
+<br>[⬅ Voltar ao início](../README.md)<br>
+
 ## 📚 Índice
 
-🔖 [Imagens](#imagens) <br>
+🔖 [Imagens do projeto](#imagens) <br>
 🔖 [Integrantes](#integrantes)<br>
-🔖 [Funciona](#funcionamento)<br>
+🔖 [Funcionamento](#funcionamento)<br>
 
 ## Imagens
 
