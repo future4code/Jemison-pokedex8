@@ -2,8 +2,7 @@
 
 🔖 [Imagens](#imagens) <br>
 🔖 [Integrantes](#integrantes)<br>
-🔖 [Funciona](#funciona)<br>
-🔖 [Não funciona](#nao-funciona)<br>
+🔖 [Funciona](#funcionamento)<br>
 
 ## Imagens
 
