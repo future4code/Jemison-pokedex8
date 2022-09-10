@@ -3,7 +3,7 @@
 ![image](https://user-images.githubusercontent.com/70871620/189482350-05efe4ee-84d8-4afd-8c03-57a69484cc19.png)
 ![image](https://user-images.githubusercontent.com/70871620/189482416-78c98122-3997-4b63-9b28-64638361f636.png)
 
-<b>[⬆ Voltar ao índice](../README.md)</b>
+<b>[⬅ Voltar ao índice](../README.md#índice)</b>
 
 ## Integrantes
 
@@ -42,7 +42,7 @@
   </tr>
 </table>
 
-<b>[⬆ Voltar ao índice](../README.md)</b>
+<b>[⬅ Voltar ao índice](../README.md#índice)</b>
 
 ---
 
@@ -57,4 +57,4 @@
 
 -   Item 3 - Após capturar um Pokemon e tentar retornar para a Home, não há renderização, sendo necessário atualizar a página.
 
-<b>[⬆ Voltar ao índice](../README.md)</b>
+<b>[⬅ Voltar ao índice](../README.md#índice)</b>
