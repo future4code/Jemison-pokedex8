@@ -1,7 +1,7 @@
 ## 📚 Índice
 
 🔖 [Imagens](#-imagens) <br>
-🔖 [Integrantes](##-integrantes)<br>
+🔖 [Integrantes](#integrantes)<br>
 🔖 [Funciona](#-funciona)<br>
 🔖 [Não funciona](#-nao-funciona)<br>
 
