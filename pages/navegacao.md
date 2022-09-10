@@ -52,7 +52,9 @@
 
 ---
 
-## Funciona
+## Funcionamento
+
+### O que funciona
 
 -   Item 1 - Home , Pokedex e Detalhes (navegação das páginas)
 -   Item 2 - Capturar - Excluir - Detalhes
@@ -61,7 +63,7 @@
 
 ---
 
-## Não funciona
+### O que não funciona
 
 -   Item 3 - Após capturar um Pokemon e tentar retornar para a Home, não há renderização, sendo necessário atualizar a página.
 
