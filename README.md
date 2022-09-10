@@ -8,7 +8,6 @@ https://jemisonpokedex-8.surge.sh
 
 ## 📚 Índice
 
-🔖 [Imagens do projeto](pages/navegacao.md#-imagens)<br>
-🔖 [Integrantes](pages/navegacao.md#-integrantes)<br>
-🔖 [O que funciona](pages/navegacao.md#-funciona)<br>
-🔖 [O que não funciona](pages/navegacao.md#-nao-funciona)<br>
+🔖 [Imagens do projeto](pages/navegacao.md#imagens)<br>
+🔖 [Integrantes](pages/navegacao.md#integrantes)<br>
+🔖 [O que funciona](pages/navegacao.md#funcionamento)<br>
