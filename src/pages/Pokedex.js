@@ -25,19 +25,55 @@ export default function Pokedex() {
     const getTypeBackgroundColor = (typePokemon) => {
         switch (typePokemon) {
             case "grass":
-                return "#b4d8c3";
+                return "#5c9167";
                 break;
             case "fire":
-                return "#efe2cb";
+                return "#b1856b";
                 break;
             case "water":
-                return "#abd0d9";
+                return "#66a0b3";
                 break;
             case "bug":
-                return "#add7a2";
+                return "#75a465";
                 break;
             case "normal":
-                return "#f4edb2";
+                return "#bfb38d";
+                break;
+            case "poison":
+                return "#a56e9b";
+                break;
+            case "electric":
+                return "#e0c04a";
+                break;
+            case "ground":
+                return "#c9a16e";
+                break;
+            case "fairy":
+                return "#e0a4c4";
+                break;
+            case "fighting":
+                return "#a56e6e";
+                break;
+            case "psychic":
+                return "#c4a0b3";
+                break;
+            case "rock":
+                return "#b3a16e";
+                break;
+            case "ghost":
+                return "#6e6eb3";
+                break;
+            case "ice":
+                return "#a4c4c4";
+                break;
+            case "dragon":
+                return "#6e6eb3";
+                break;
+            case "dark":
+                return "#6e6e6e";
+                break;
+            case "steel":
+                return "#a4b3b3";
                 break;
             default:
                 return "#f2f2f2";
@@ -47,19 +83,55 @@ export default function Pokedex() {
     const getTypeColor = (typePokemon) => {
         switch (typePokemon) {
             case "grass":
-                return "#9bcc50";
+                return "#5c9167";
                 break;
             case "fire":
-                return "#fd7d24";
+                return "#b1856b";
                 break;
             case "water":
-                return "#4592c4";
+                return "#66a0b3";
                 break;
             case "bug":
-                return "#729f3f";
+                return "#75a465";
                 break;
             case "normal":
-                return "#a4acaf";
+                return "#bfb38d";
+                break;
+            case "poison":
+                return "#a56e9b";
+                break;
+            case "electric":
+                return "#e0c04a";
+                break;
+            case "ground":
+                return "#c9a16e";
+                break;
+            case "fairy":
+                return "#e0a4c4";
+                break;
+            case "fighting":
+                return "#a56e6e";
+                break;
+            case "psychic":
+                return "#c4a0b3";
+                break;
+            case "rock":
+                return "#b3a16e";
+                break;
+            case "ghost":
+                return "#6e6eb3";
+                break;
+            case "ice":
+                return "#a4c4c4";
+                break;
+            case "dragon":
+                return "#6e6eb3";
+                break;
+            case "dark":
+                return "#6e6e6e";
+                break;
+            case "steel":
+                return "#a4b3b3";
                 break;
             default:
                 return "#f2f2f2";
