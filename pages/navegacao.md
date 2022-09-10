@@ -1,18 +1,18 @@
 ## 📚 Índice
 
-🔖 [Imagens do projeto](#-imagens)<br>
+🔖 [Imagens](#-imagens) <br>
 🔖 [Integrantes](#-integrantes)<br>
-🔖 [O que funciona](#-o-que-funciona)<br>
-🔖 [O que não funciona](#-o-que-nao-funciona)<br>
+🔖 [Funciona](#-funciona)<br>
+🔖 [Não funciona](#-nao-funciona)<br>
 
-## Imagens do projeto
+## Imagens
 
 ![image](https://user-images.githubusercontent.com/70871620/189482350-05efe4ee-84d8-4afd-8c03-57a69484cc19.png)
 ![image](https://user-images.githubusercontent.com/70871620/189482416-78c98122-3997-4b63-9b28-64638361f636.png)
 
-<b>[🔝 Voltar ao índice](#-índice)</b>
+<b>[⬆ Voltar ao índice](#-índice)</b>
 
-## Nome dos integrantes
+## Integrantes
 
  <table display="flex">
   <tr>
@@ -49,15 +49,21 @@
   </tr>
 </table>
 
+<b>[⬆ Voltar ao índice](#-índice)</b>
+
 ---
 
-## O que funciona
+## Funciona
 
 -   Item 1 - Home , Pokedex e Detalhes (navegação das páginas)
 -   Item 2 - Capturar - Excluir - Detalhes
 
+<b>[⬆ Voltar ao índice](#-índice)</b>
+
 ---
 
-## O que não funciona
+## Não funciona
 
 -   Item 3 - Após capturar um Pokemon e tentar retornar para a Home, não há renderização, sendo necessário atualizar a página.
+
+<b>[⬆ Voltar ao índice](#-índice)</b>
