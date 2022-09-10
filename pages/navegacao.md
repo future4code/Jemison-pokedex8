@@ -7,40 +7,9 @@
 
 ## Integrantes
 
- <table display="flex">
-  <tr>
-    <td align="center">
-      <a href="https://github.com/DanielSiilva">
-        <img src="https://avatars.githubusercontent.com/u/94769388?v=4" width="100px;" alt="Foto do Daniel da Silva no GitHub"/><br>
-        <sub>
-          <b>@DanielSiilva</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-
-  <tr>
-    <td align="center">
-      <a href="https://github.com/DouglasWilliams298">
-        <img src="https://avatars.githubusercontent.com/u/97309506?v=4" width="100px;" alt="Foto do Douglas Williams no GitHub"/><br>
-        <sub>
-          <b>@DouglasWilliams298</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-
-  <tr>
-    <td align="center">
-      <a href="https://github.com/matheusqueirozds">
-        <img src="https://avatars.githubusercontent.com/u/70871620?v=4" width="100px;" alt="Foto do Matheus Queiroz no GitHub"/><br>
-        <sub>
-          <b>@matheusqueirozds</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
+[Daniel da Silva](https://github.com/DanielSiilva) |  [Douglas Williams](https://github.com/DouglasWilliams298) |  [Matheus Queiroz](https://github.com/matheusqueirozds)
+:-------------------------:|:-------------------------:|:-------------------------:
+ <a href="https://github.com/DanielSiilva"><img src="https://avatars.githubusercontent.com/u/94769388?v=4" width="100px;" alt="Foto do Daniel da Silva no GitHub"/></a> | <a href="https://github.com/DouglasWilliams298"><img src="https://avatars.githubusercontent.com/u/97309506?v=4" width="100px;" alt="Foto do Douglas Williams no GitHub"/></a> | <a href="https://github.com/matheusqueirozds"><img src="https://avatars.githubusercontent.com/u/70871620?v=4" width="100px;" alt="Foto do Matheus Queiroz no GitHub"/></a>
 
 <b>[⬅ Voltar ao índice](../README.md#índice)</b>
 
