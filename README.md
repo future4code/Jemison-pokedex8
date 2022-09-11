@@ -2,7 +2,7 @@
 
 > 🚀 Projeto desenvolvido em React JS com o consumo de uma API REST (PokeAPI), simulando uma Pokédex, com funcionalidades como capturar o pokémon, remover, ver detalhes, etc.
 
-![image](https://user-images.githubusercontent.com/70871620/189486145-9752dc63-d18b-405b-84ca-50b6a5144110.png)
+![image](https://user-images.githubusercontent.com/70871620/189510534-1df5c164-2655-4ad5-92a5-9b3fad0a68b5.png)
 
 ## Link do projeto
 
