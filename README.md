@@ -6,7 +6,7 @@
 
 ## Link do projeto
 
-https://jemisonpokedex-8.surge.sh
+https://pokedexjemison8.surge.sh/
 
 ---
 
