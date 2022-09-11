@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {ContextPokedex} from "../context/ContexPokedex"
+import { ContextPokedex } from "../context/ContexPokedex";
 
-
-export function PokedexProvider (props) {
+export function PokedexProvider(props) {
     const [pokemons, setPokemons] = useState([]);
     const [infoPokemons, setInfoPokemons] = useState([]);
-    const [pokedex, setPokedex] = useState([]); 
-    
+    const [pokedex, setPokedex] = useState([]);
+    const [pagina, setPagina] = useState(0);
+    const [totalPaginas, setTotalPaginas] = useState(0);
+    const itemPorPagina = 30;
+
     const getAllPokemons = () => {
-        const url = `https://pokeapi.co/api/v2/pokemon?limit=150&offset=0`;
+        const url = `https://pokeapi.co/api/v2/pokemon?limit=${itemPorPagina}&offset=${
+            pagina * itemPorPagina
+        }`;
 
         axios
             .get(url)
             .then((response) => {
                 setPokemons(response.data.results);
+                setTotalPaginas(Math.ceil(response.data.count / itemPorPagina));
             })
             .catch((error) => {
                 alert("Erro na requisição");
@@ -23,7 +28,7 @@ export function PokedexProvider (props) {
 
     useEffect(() => {
         getAllPokemons();
-    }, []);
+    }, [pagina]);
 
     useEffect(() => {
         let endpoints = [];
@@ -32,7 +37,7 @@ export function PokedexProvider (props) {
                 .get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
                 .then((response) => {
                     endpoints.push(response.data);
-                    if (endpoints.length === 150) {
+                    if (endpoints.length === itemPorPagina) {
                         const ordenaListaPokemons = endpoints.sort((a, b) => {
                             return a.id - b.id;
                         });
@@ -61,18 +66,19 @@ export function PokedexProvider (props) {
         // Aqui precisamos guardar novamente o pokemon, no estado que está sendo mapeado na home. Usamos o spread para copiarmos o estado atual, atualizando-o depois da ação!
     };
 
-
-
     return (
         <ContextPokedex.Provider
             value={{
-            infoPokemons,
-            capturarPokemon,
-            removerPokemon,
-            pokedex,
-            }}
-        >
+                infoPokemons,
+                capturarPokemon,
+                removerPokemon,
+                pokedex,
+                pagina,
+                setPagina,
+                totalPaginas,
+                setTotalPaginas,
+            }}>
             {props.children}
         </ContextPokedex.Provider>
-    )
+    );
 }

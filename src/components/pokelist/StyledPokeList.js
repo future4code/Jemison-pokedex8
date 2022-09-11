@@ -6,17 +6,13 @@ export const ListaDePokemons = styled.ul`
     gap: 40px 20px;
     margin: 0 auto;
     max-width: 1200px;
-    padding: 40px 10px;
+    padding: 0 10px;
 
     @media screen and (max-width: 1000px) {
         grid-template-columns: repeat(3, 1fr);
     }
     @media screen and (max-width: 800px) {
         grid-template-columns: 1fr 1fr;
-    }
-
-    @media screen and (max-width: 600px) {
-        grid-template-columns: 1fr;
     }
 `;
 
@@ -76,14 +72,16 @@ export const CardContent = styled.div`
         font-weight: 500;
         text-transform: capitalize;
         padding: 10px 20px;
+
+        @media screen and (max-width: 600px) {
+            font-size: 1.25rem;
+        }
     }
 `;
 
 export const Botoes = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
 
     button:first-child {
@@ -99,10 +97,15 @@ export const Botoes = styled.div`
             background: #da471b;
         }
     }
+
+    @media screen and (max-width: 800px) {
+        grid-template-columns: 1fr;
+    }
 `;
 export const Botao = styled.button`
     border: none;
-    padding: 0.675rem 1.25rem;
+    padding-top: 0.675rem;
+    padding-bottom: 0.675rem;
     border-radius: 4px;
     color: #fff;
     font-size: 1rem;
