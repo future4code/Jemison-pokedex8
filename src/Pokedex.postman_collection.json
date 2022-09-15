@@ -1,0 +1,78 @@
+{
+    "info": {
+        "_postman_id": "c241b156-6dde-4712-b384-904062756230",
+        "name": "Pokedex",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+        "_exporter_id": "22364339"
+    },
+    "item": [
+        {
+            "name": "getAllPokemons",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20",
+                    "protocol": "https",
+                    "host": ["pokeapi", "co"],
+                    "path": ["api", "v2", "pokemon", ""],
+                    "query": [
+                        {
+                            "key": "offset",
+                            "value": "0"
+                        },
+                        {
+                            "key": "limit",
+                            "value": "20"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "GetPokemonDetls",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "https://pokeapi.co/api/v2/pokemon/:idDoPokemon",
+                    "protocol": "https",
+                    "host": ["pokeapi", "co"],
+                    "path": ["api", "v2", "pokemon", ":idDoPokemon"],
+                    "variable": [
+                        {
+                            "key": "idDoPokemon",
+                            "value": "blastoise"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
